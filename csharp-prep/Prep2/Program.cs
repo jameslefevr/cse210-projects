@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -8,26 +9,40 @@ class Program
         string userInput = Console.ReadLine();
         int grade = int.Parse(userInput);
 
+        string letter = "";
+
         if (grade < 60)
         {
-            Console.WriteLine("Your grade is a F.");
+            letter = "F";
         }
         else if (grade >= 60 && grade < 70)
         {
-            Console.WriteLine("Your grade is a D.");
+            letter = "D";
         }
         else if (grade >= 70 && grade < 80)
         {
-            Console.WriteLine("Your grade is a C.");
+            letter = "C";
         }
         else if (grade >= 80 && grade < 90)
         {
-            Console.WriteLine("Your grade is an B.");
+            letter = "B";
         }
         else
         {
-            Console.WriteLine("Your grade is an A.");
+            letter = "A";
         }
+
+        if (grade >= 70)
+        {
+            Console.WriteLine("You passed the class.");
+        }
+        else
+        {
+            Console.WriteLine("Try harder next time.");
+        }
+
+
+        Console.WriteLine($"Your grade is a {letter}.");
 
     }
 }
